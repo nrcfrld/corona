@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Callbacks - fullPage.js</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage callback function." />
+    <meta
+      name="keywords"
+      content="fullpage,jquery,demo,callbac,function,event"
+    />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/fullpage.js/fullpage.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <nav
+      id="menu"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <div id="prev">
+        <svg
+          width="28"
+          height="16"
+          viewBox="0 0 28 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.0315 0.862989C14.7934 -0.287663 12.786 -0.287663 11.5479 0.862989L1.40249 10.2916C0.164359 11.4422 0.164359 13.3078 1.40249 14.4584C2.64062 15.6091 4.64802 15.6091 5.88615 14.4584L13.7897 7.11331L21.6932 14.4584C22.9313 15.6091 24.9387 15.6091 26.1769 14.4584C27.415 13.3078 27.415 11.4422 26.1769 10.2916L16.0315 0.862989Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <div class="my-2">
+        <!-- Mouse SVG -->
+        <svg
+          width="33"
+          height="56"
+          viewBox="0 0 33 56"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.5 0.892857C25.6127 0.892857 33 8.41208 33 17.6875V38.3125C33 47.5879 25.6127 55.1071 16.5 55.1071C7.3873 55.1071 0 47.5879 0 38.3125V17.6875C0 8.41207 7.3873 0.892857 16.5 0.892857ZM28.3684 17.6875C28.3684 11.0157 23.0547 5.60714 16.5 5.60714C9.94525 5.60714 4.63158 11.0157 4.63158 17.6875V38.3125C4.63158 44.9843 9.94525 50.3929 16.5 50.3929C23.0547 50.3929 28.3684 44.9843 28.3684 38.3125V17.6875ZM16.7895 17.9821C14.5513 17.9821 12.7368 16.1353 12.7368 13.8571C12.7368 11.579 14.5513 9.73214 16.7895 9.73214C19.0277 9.73214 20.8421 11.579 20.8421 13.8571C20.8421 16.1353 19.0277 17.9821 16.7895 17.9821Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <div id="next">
+        <svg
+          width="28"
+          height="16"
+          viewBox="0 0 28 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11.9685 15.137C13.2066 16.2877 15.214 16.2877 16.4521 15.137L26.5975 5.70843C27.8356 4.55778 27.8356 2.6922 26.5975 1.54155C25.3594 0.390899 23.352 0.390899 22.1139 1.54155L14.2103 8.88669L6.30679 1.54155C5.06866 0.390897 3.06126 0.390897 1.82313 1.54155C0.585 2.6922 0.585 4.55778 1.82313 5.70843L11.9685 15.137Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </nav>
+
+    <div id="static-content">
+      <div class="static-section-2">
+        <div class="image-content">
+          <img src="./assets/img/scene2.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div id="fullpage">
+      <div class="section text-center" id="section1">
+        <div id="start-button-wrap" class="text-center">
+          <button
+            type="button"
+            id="start"
+            class="btn btn-warning btn-lg font-weight-bold font-size-48 px-4"
+          >
+            START THE JOURNEY
+          </button>
+        </div>
+      </div>
+      <div class="section text-center" id="section2">
+        <div class="content">
+          <p class="text-white font-size-29">
+            Awal mula virus SARS-Cov-2 atau sering disebut Covid-19 diyakini
+            pertama kali menyebar dari pasar basah di Wuhan, China pada Desember
+            2019.
+          </p>
+        </div>
+      </div>
+      <div class="section" id="section3"></div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="assets/vendor/fullpage.js/fullpage.min.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      var myFullpage = new fullpage("#fullpage", {
+        lockAnchors: true,
+      });
+
+      $("#start").click(function () {
+        myFullpage.moveSectionDown();
+      });
+
+      $("#next").click(function () {
+        myFullpage.moveSectionDown();
+      });
+
+      $("#prev").click(function () {
+        myFullpage.moveSectionUp();
+      });
+    </script>
+  </body>
+</html>
