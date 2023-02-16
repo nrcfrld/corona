@@ -1,14 +1,34 @@
+@import "./base/mixins";
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  color: #393939;
+}
+
+.font-rubik {
+  font-family: "Rubik", sans-serif;
 }
 
 .font-size-48 {
-  font-size: 48px;
+  @include large {
+    font-size: 48px;
+  }
+  @include medium {
+    font-size: 30px;
+  }
+  font-size: 28px;
 }
 
 .font-size-29 {
-  font-size: 29px;
+  @include large {
+    font-size: 29px;
+  }
+  font-size: 20px;
+}
+
+.text-gray {
+  color: #919191;
 }
 
 #menu {
@@ -25,26 +45,62 @@ body {
   }
 }
 
+.fp-viewing-0 #menu {
+  opacity: 0;
+}
+
+.card-horizontal-wrapper {
+  max-width: 815px;
+  margin: 0 auto;
+  border-radius: 50px;
+  border: none;
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+
+    img {
+      @include medium {
+        border-radius: 50px 0 0 50px;
+      }
+    }
+  }
+}
+
+.start-heading {
+  text-shadow: -3px 6px 0px #0c308d;
+  color: #fff;
+  font-family: Rubik;
+  font-weight: 900;
+  @include large {
+    font-size: 150px;
+    margin-bottom: 385px;
+  }
+
+  font-size: 48px;
+  margin-bottom: 120px;
+}
+
 #start {
   border-radius: 24px;
+  color: #fff;
   background-color: #fbb040 !important;
   z-index: 10;
   position: relative;
+  box-shadow: -6px 9px 0 #fe6e31;
 }
 
 #start-button-wrap {
-  position: absolute;
-  bottom: 250px;
+  position: relative;
   width: 100%;
   z-index: 999;
 }
 
 #section1 {
-  background: url("../img/cover.jpg") center center no-repeat;
+  background: url("../img/cover-new.jpg") center center no-repeat;
   background-size: cover;
 }
 
-#section2 {
+.section {
   .content {
     opacity: 0;
     position: absolute;
@@ -64,7 +120,7 @@ body {
 
 // Trigger Animation
 .fp-viewing-1 {
-  #section2 {
+  .section {
     .content {
       opacity: 1;
       position: absolute;
@@ -79,16 +135,75 @@ body {
   }
 }
 
-.fp-viewing-2 {
+.fp-viewing-2,
+.fp-viewing-3,
+.fp-viewing-4,
+.fp-viewing-5 {
   #static-content {
     .static-section-2 {
-      filter: brightness(0.7);
+      filter: brightness(0.6);
+    }
+  }
+
+  .section {
+    .content {
+      opacity: 1;
+      position: absolute;
+      top: 24px;
+      width: 100%;
+      p {
+        max-width: 760px;
+        margin: 0 auto;
+        z-index: 999;
+      }
+    }
+  }
+}
+
+.fp-viewing-3 {
+  #static-content {
+    .static-section-4 {
+      opacity: 1;
+      top: 20px;
+    }
+  }
+}
+
+.fp-viewing-4 {
+  #static-content {
+    .static-section-4 {
+      opacity: 1;
+      top: 20px;
+    }
+    .static-section-5 {
+      opacity: 1;
+      top: 150px;
+    }
+  }
+}
+
+.fp-viewing-5 {
+  #static-content {
+    .static-section-4 {
+      opacity: 1;
+      top: 20px;
+    }
+    .static-section-5 {
+      opacity: 1;
+      top: 150px;
+    }
+    .static-section-6 {
+      opacity: 1;
+      top: 450px;
     }
   }
 }
 
 .fp-viewing-1,
-.fp-viewing-2 {
+.fp-viewing-2,
+.fp-viewing-3,
+.fp-viewing-4,
+.fp-viewing-5 {
   #static-content {
     .static-section-2 {
       opacity: 1;
@@ -98,6 +213,19 @@ body {
           opacity: 1;
           bottom: 0;
         }
+      }
+    }
+  }
+}
+
+.fp-viewing-6 {
+  #static-content {
+    .static-section-7 {
+      opacity: 1;
+
+      .content {
+        opacity: 1;
+        margin-left: 0;
       }
     }
   }
@@ -124,6 +252,51 @@ body {
         opacity: 0;
         transition: 1s;
         transition-delay: 1s;
+      }
+    }
+  }
+
+  .static-section-4 {
+    position: fixed;
+    opacity: 0;
+    top: 600px;
+    transition: top 1s ease 0s;
+    width: 100%;
+  }
+
+  .static-section-5 {
+    position: fixed;
+    opacity: 0;
+    top: 800px;
+    width: 100%;
+    transition: top 1s ease 0s;
+  }
+
+  .static-section-6 {
+    position: fixed;
+    opacity: 0;
+    top: 1000px;
+    width: 100%;
+    transition: top 1s ease 0s;
+  }
+
+  .static-section-7 {
+    top: 0;
+    position: fixed;
+    opacity: 0;
+    background: #6d4ab6;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0;
+
+    .content {
+      opacity: 0;
+      margin-left: -500px;
+      .img-content {
+        position: fixed;
+        bottom: 0;
+        left: 60px;
       }
     }
   }
